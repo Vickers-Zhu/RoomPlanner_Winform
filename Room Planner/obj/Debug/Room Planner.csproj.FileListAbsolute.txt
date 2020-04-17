@@ -1,0 +1,20 @@
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\bin\Debug\Room Planner.exe.config
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\bin\Debug\Room Planner.exe
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\bin\Debug\Room Planner.pdb
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room Planner.csprojAssemblyReference.cache
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room_Planner.MainForm.resources
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room_Planner.Properties.Resources.resources
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room Planner.csproj.GenerateResource.cache
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room Planner.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room Planner.exe
+C:\Users\VickersZhu\source\repos\Room Planner\Room Planner\obj\Debug\Room Planner.pdb
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\bin\Debug\Room Planner.exe.config
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\bin\Debug\Room Planner.exe
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\bin\Debug\Room Planner.pdb
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.csprojAssemblyReference.cache
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.MainForm.resources
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.Properties.Resources.resources
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.csproj.GenerateResource.cache
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.csproj.CoreCompileInputs.cache
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.exe
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.pdb
