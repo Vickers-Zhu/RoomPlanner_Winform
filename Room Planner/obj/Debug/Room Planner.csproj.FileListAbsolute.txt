@@ -19,3 +19,9 @@ C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.exe
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.pdb
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.Debug.resources
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\bin\Debug\Newtonsoft.Json.dll
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.csproj.CopyComplete
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\bin\Debug\zh-CN\Room Planner.resources.dll
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.Properties.zh_cn.resources
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.MainForm.zh-CN.resources
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\zh-CN\Room Planner.resources.dll

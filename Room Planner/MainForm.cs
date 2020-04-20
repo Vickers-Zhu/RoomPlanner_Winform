@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
+using System.Globalization;
+using System.Threading;
+using System.Resources;
 
 namespace Room_Planner
 {
@@ -21,10 +26,13 @@ namespace Room_Planner
         private static bool oneSelected;
         private static bool dragFlag;
         private static Point mouseOffset;
+        public string language = Properties.Settings.Default.Language;
 
 
         public MainForm()
         {
+            Console.WriteLine(Thread.CurrentThread.CurrentUICulture.ToString());
+
             InitializeComponent();
             this.MinimumSize = new Size(400, 300);
             furnitures = new List<Furniture>();
@@ -32,9 +40,7 @@ namespace Room_Planner
             dragFlag = false;
             mouseOffset = new Point();
             Count = 0;
-            Debug form = new Debug();
             this.MouseWheel += new MouseEventHandler(rotate_MouseWheel);
-            form.Show();
         }
 
         private void newBluToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,7 +190,11 @@ namespace Room_Planner
         {
             if (e.KeyCode == Keys.F2)
             {
+                furnitures = new List<Furniture>();
                 selectedBtn = null;
+                listFurniture.Items.Clear();
+                listFurniture.Refresh();
+
                 widthMap = flowLayoutPanelLeft.Width - 15;
                 heightMap = flowLayoutPanelLeft.Height - 15;
                 bitmap = new Bitmap(flowLayoutPanelLeft.Width - 15, flowLayoutPanelLeft.Height - 15);
@@ -469,8 +479,145 @@ namespace Room_Planner
                     }
                 }
                 DrawFurnitures();
+                return;
+            }
+            else
+            {
+                HandledMouseEventArgs h = e as HandledMouseEventArgs;
+                if (h != null)
+                {
+                    h.Handled = true;
+                }
+            }
+
+        }
+        void cancel_MouseWheel(object sender, MouseEventArgs e)
+        {
+            HandledMouseEventArgs h = e as HandledMouseEventArgs;
+            if (h != null)
+            {
+                h.Handled = true;
             }
         }
 
+        private void openBluprintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.SendWait("{F2}");
+            string localFilePath = "";
+            OpenFileDialog ofd = new OpenFileDialog();
+            JsonSerializer serializer = new JsonSerializer();
+            ofd.Filter = "bpp files (*.bpp)|*.bpp";
+            ofd.FilterIndex = 1;
+            ofd.RestoreDirectory = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                localFilePath = ofd.FileName.ToString();
+                using (Stream s = File.Open(ofd.FileName, FileMode.Open))
+                using (StreamReader sr = new StreamReader(s))
+                {
+                    string line = "";
+                    oneSelected = Boolean.Parse(sr.ReadLine());
+                    Console.WriteLine(oneSelected);
+                    while (!sr.EndOfStream)
+                    {
+                        line = sr.ReadLine();
+                        Furniture furniture = JsonConvert.DeserializeObject<Furniture>(line);
+                        if (furniture.Name == "Coffee") furniture.Image = buttonCoffee.BackgroundImage;
+                        if (furniture.Name == "Table") furniture.Image = buttonTable.BackgroundImage;
+                        if (furniture.Name == "Sofa") furniture.Image = buttonSofa.BackgroundImage;
+                        if (furniture.Name == "Bed") furniture.Image = buttonBed.BackgroundImage;
+                        if (furniture.Name == "Walls") furniture.Image = buttonWalls.BackgroundImage;
+                 
+                        furnitures.Add(furniture);
+                        string position = "{X=" + furniture.Points.First().X + ", Y=" + furniture.Points.First().Y + "}";
+                        listFurniture.Items.Add(new ListViewItem(new[] { furniture.Name, position }));
+                        listFurniture.Refresh();
+                        DrawFurnitures();
+                    }
+                    MessageBox.Show("Load successfully!!!");
+                }
+            }
+
+        }
+
+        private void saveBlueprintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string localFilePath = "";
+            SaveFileDialog sfd = new SaveFileDialog();
+            JsonSerializer serializer = new JsonSerializer();
+            sfd.Filter = "bpp files (*.bpp)|*.bpp";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                localFilePath = sfd.FileName.ToString();
+                using (Stream s = File.Open(sfd.FileName, FileMode.Create))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    sw.WriteLine(oneSelected);
+                    foreach(Furniture furniture in furnitures)
+                    {
+                        furniture.Image = null;
+                        serializer.Serialize(sw, furniture);
+                        sw.WriteLine();
+                    }
+                }
+                MessageBox.Show("Saved Successfully");
+            }
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage("en-US");
+            Properties.Settings.Default.Language = "en";
+            Properties.Settings.Default.Save();
+            //InitializeComponent();
+            //this.MinimumSize = new Size(400, 300);
+            //furnitures = new List<Furniture>();
+            //oneSelected = false;
+            //dragFlag = false;
+            //mouseOffset = new Point();
+            //Count = 0;
+            //this.MouseWheel += new MouseEventHandler(rotate_MouseWheel);
+
+
+        }
+
+        private void 简体中文ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage("zh-CN");
+            Properties.Settings.Default.Language = "cn";
+            Properties.Settings.Default.Save();
+            //InitializeComponent();
+            //this.MinimumSize = new Size(400, 300);
+            //furnitures = new List<Furniture>();
+            //oneSelected = false;
+            //dragFlag = false;
+            //mouseOffset = new Point();
+            //Count = 0;
+            //this.MouseWheel += new MouseEventHandler(rotate_MouseWheel);
+
+        }
+
+        private void ChangeLanguage(string lang) //A function called to change the language
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+    
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
+            resources.ApplyResources(fileToolStripMenuItem, fileToolStripMenuItem.Name, new CultureInfo(lang));
+            resources.ApplyResources(newBluToolStripMenuItem, newBluToolStripMenuItem.Name, new CultureInfo(lang));
+            resources.ApplyResources(openBluprintToolStripMenuItem, openBluprintToolStripMenuItem.Name, new CultureInfo(lang));
+            resources.ApplyResources(saveBlueprintToolStripMenuItem, saveBlueprintToolStripMenuItem.Name, new CultureInfo(lang));
+            resources.ApplyResources(languageToolStripMenuItem, languageToolStripMenuItem.Name, new CultureInfo(lang));
+                
+            resources.ApplyResources(buttonCoffee, buttonCoffee.Name, new CultureInfo(lang));
+            resources.ApplyResources(buttonBed, buttonBed.Name, new CultureInfo(lang));
+            resources.ApplyResources(buttonSofa, buttonSofa.Name, new CultureInfo(lang));
+            resources.ApplyResources(buttonTable, buttonTable.Name, new CultureInfo(lang));
+            resources.ApplyResources(buttonWalls, buttonWalls.Name, new CultureInfo(lang));
+            resources.ApplyResources(AddBox, AddBox.Name, new CultureInfo(lang));
+            resources.ApplyResources(CreatedBox, CreatedBox.Name, new CultureInfo(lang));
+        }
     }
 }
