@@ -63,9 +63,9 @@ namespace Room_Planner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        internal static System.Drawing.Bitmap coffee_table {
             get {
-                object obj = ResourceManager.GetObject("_1", resourceCulture);
+                object obj = ResourceManager.GetObject("coffee_table", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Room_Planner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2 {
+        internal static System.Drawing.Bitmap double_bed {
             get {
-                object obj = ResourceManager.GetObject("_2", resourceCulture);
+                object obj = ResourceManager.GetObject("double_bed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Room_Planner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3 {
+        internal static System.Drawing.Bitmap sofa {
             get {
-                object obj = ResourceManager.GetObject("_3", resourceCulture);
+                object obj = ResourceManager.GetObject("sofa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,19 @@ namespace Room_Planner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4 {
+        internal static System.Drawing.Bitmap table {
             get {
-                object obj = ResourceManager.GetObject("_4", resourceCulture);
+                object obj = ResourceManager.GetObject("table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall {
+            get {
+                object obj = ResourceManager.GetObject("wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

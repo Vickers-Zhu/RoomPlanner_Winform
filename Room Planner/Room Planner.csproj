@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debug.Designer.cs">
+      <DependentUpon>Debug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Furniture.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Debug.resx">
+      <DependentUpon>Debug.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,16 +91,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2.jpg" />
+    <None Include="Resources\coffee-table.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3.jpg" />
+    <None Include="Resources\double-bed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\4.jpg" />
+    <None Include="Resources\sofa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.jpg" />
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

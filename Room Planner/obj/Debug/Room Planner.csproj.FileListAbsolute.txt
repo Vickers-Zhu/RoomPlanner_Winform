@@ -18,3 +18,4 @@ C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.csproj.CoreCompileInputs.cache
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.exe
 C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room Planner.pdb
+C:\Users\VickersZhu\Documents\GitHub\RoomPlanner_Winform\Room Planner\obj\Debug\Room_Planner.Debug.resources

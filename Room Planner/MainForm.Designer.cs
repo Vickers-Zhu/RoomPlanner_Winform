@@ -28,42 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBluToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddBox = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.flowLayoutPanelRight = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonCoffee = new System.Windows.Forms.Button();
+            this.buttonTable = new System.Windows.Forms.Button();
+            this.buttonSofa = new System.Windows.Forms.Button();
+            this.buttonBed = new System.Windows.Forms.Button();
+            this.buttonWalls = new System.Windows.Forms.Button();
             this.CreatedBox = new System.Windows.Forms.GroupBox();
             this.listFurniture = new System.Windows.Forms.ListView();
             this.nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.positionColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanelLeft = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.AddBox.SuspendLayout();
-            this.flowLayoutPanel.SuspendLayout();
+            this.flowLayoutPanelRight.SuspendLayout();
             this.CreatedBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            this.flowLayoutPanelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -76,7 +79,7 @@
             // newBluToolStripMenuItem
             // 
             this.newBluToolStripMenuItem.Name = "newBluToolStripMenuItem";
-            this.newBluToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.newBluToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.newBluToolStripMenuItem.Text = "New bluprint  F2";
             this.newBluToolStripMenuItem.Click += new System.EventHandler(this.newBluToolStripMenuItem_Click);
             // 
@@ -85,70 +88,92 @@
             this.AddBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBox.Controls.Add(this.flowLayoutPanel);
-            this.AddBox.Location = new System.Drawing.Point(24, 12);
+            this.AddBox.Controls.Add(this.flowLayoutPanelRight);
+            this.AddBox.Location = new System.Drawing.Point(7, 31);
             this.AddBox.Name = "AddBox";
-            this.AddBox.Size = new System.Drawing.Size(217, 198);
+            this.AddBox.Size = new System.Drawing.Size(225, 216);
             this.AddBox.TabIndex = 0;
             this.AddBox.TabStop = false;
             this.AddBox.Text = "Add Furniture";
             // 
-            // flowLayoutPanel
+            // flowLayoutPanelRight
             // 
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Controls.Add(this.button1);
-            this.flowLayoutPanel.Controls.Add(this.button2);
-            this.flowLayoutPanel.Controls.Add(this.button3);
-            this.flowLayoutPanel.Controls.Add(this.button4);
-            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(3, 21);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(211, 174);
-            this.flowLayoutPanel.TabIndex = 0;
+            this.flowLayoutPanelRight.AutoScroll = true;
+            this.flowLayoutPanelRight.Controls.Add(this.buttonCoffee);
+            this.flowLayoutPanelRight.Controls.Add(this.buttonTable);
+            this.flowLayoutPanelRight.Controls.Add(this.buttonSofa);
+            this.flowLayoutPanelRight.Controls.Add(this.buttonBed);
+            this.flowLayoutPanelRight.Controls.Add(this.buttonWalls);
+            this.flowLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelRight.Location = new System.Drawing.Point(3, 21);
+            this.flowLayoutPanelRight.Name = "flowLayoutPanelRight";
+            this.flowLayoutPanelRight.Size = new System.Drawing.Size(219, 192);
+            this.flowLayoutPanelRight.TabIndex = 0;
             // 
-            // button1
+            // buttonCoffee
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Image = global::Room_Planner.Properties.Resources._1;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCoffee.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonCoffee.BackgroundImage = global::Room_Planner.Properties.Resources.coffee_table;
+            this.buttonCoffee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCoffee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCoffee.Location = new System.Drawing.Point(3, 3);
+            this.buttonCoffee.Name = "buttonCoffee";
+            this.buttonCoffee.Size = new System.Drawing.Size(75, 75);
+            this.buttonCoffee.TabIndex = 0;
+            this.buttonCoffee.UseVisualStyleBackColor = false;
+            this.buttonCoffee.Click += new System.EventHandler(this.buttonCoffee_Click);
             // 
-            // button2
+            // buttonTable
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::Room_Planner.Properties.Resources._2;
-            this.button2.Location = new System.Drawing.Point(84, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 75);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonTable.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonTable.BackgroundImage = global::Room_Planner.Properties.Resources.table;
+            this.buttonTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTable.Location = new System.Drawing.Point(84, 3);
+            this.buttonTable.Name = "buttonTable";
+            this.buttonTable.Size = new System.Drawing.Size(75, 75);
+            this.buttonTable.TabIndex = 1;
+            this.buttonTable.UseVisualStyleBackColor = false;
+            this.buttonTable.Click += new System.EventHandler(this.buttonTable_Click);
             // 
-            // button3
+            // buttonSofa
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Image = global::Room_Planner.Properties.Resources._3;
-            this.button3.Location = new System.Drawing.Point(3, 84);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 75);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonSofa.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonSofa.BackgroundImage = global::Room_Planner.Properties.Resources.sofa;
+            this.buttonSofa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSofa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSofa.Location = new System.Drawing.Point(3, 84);
+            this.buttonSofa.Name = "buttonSofa";
+            this.buttonSofa.Size = new System.Drawing.Size(75, 75);
+            this.buttonSofa.TabIndex = 2;
+            this.buttonSofa.UseVisualStyleBackColor = false;
+            this.buttonSofa.Click += new System.EventHandler(this.buttonSofa_Click);
             // 
-            // button4
+            // buttonBed
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Image = global::Room_Planner.Properties.Resources._4;
-            this.button4.Location = new System.Drawing.Point(84, 84);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 75);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonBed.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonBed.BackgroundImage = global::Room_Planner.Properties.Resources.double_bed;
+            this.buttonBed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBed.Location = new System.Drawing.Point(84, 84);
+            this.buttonBed.Name = "buttonBed";
+            this.buttonBed.Size = new System.Drawing.Size(75, 75);
+            this.buttonBed.TabIndex = 3;
+            this.buttonBed.UseVisualStyleBackColor = false;
+            this.buttonBed.Click += new System.EventHandler(this.buttonBed_Click);
+            // 
+            // buttonWalls
+            // 
+            this.buttonWalls.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonWalls.BackgroundImage = global::Room_Planner.Properties.Resources.wall;
+            this.buttonWalls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonWalls.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWalls.Location = new System.Drawing.Point(3, 165);
+            this.buttonWalls.Name = "buttonWalls";
+            this.buttonWalls.Size = new System.Drawing.Size(75, 75);
+            this.buttonWalls.TabIndex = 3;
+            this.buttonWalls.UseVisualStyleBackColor = false;
+            this.buttonWalls.Click += new System.EventHandler(this.buttonWalls_Click);
             // 
             // CreatedBox
             // 
@@ -156,9 +181,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CreatedBox.Controls.Add(this.listFurniture);
-            this.CreatedBox.Location = new System.Drawing.Point(24, 232);
+            this.CreatedBox.Location = new System.Drawing.Point(10, 253);
             this.CreatedBox.Name = "CreatedBox";
-            this.CreatedBox.Size = new System.Drawing.Size(220, 206);
+            this.CreatedBox.Size = new System.Drawing.Size(219, 185);
             this.CreatedBox.TabIndex = 1;
             this.CreatedBox.TabStop = false;
             this.CreatedBox.Text = "Created Furniture";
@@ -173,7 +198,7 @@
             this.listFurniture.HideSelection = false;
             this.listFurniture.Location = new System.Drawing.Point(3, 21);
             this.listFurniture.Name = "listFurniture";
-            this.listFurniture.Size = new System.Drawing.Size(214, 182);
+            this.listFurniture.Size = new System.Drawing.Size(213, 161);
             this.listFurniture.TabIndex = 0;
             this.listFurniture.UseCompatibleStateImageBehavior = false;
             this.listFurniture.View = System.Windows.Forms.View.Details;
@@ -195,48 +220,65 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.pictureBox);
+            this.splitContainer.Panel1.Controls.Add(this.flowLayoutPanelLeft);
             // 
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.CreatedBox);
             this.splitContainer.Panel2.Controls.Add(this.AddBox);
             this.splitContainer.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer.SplitterDistance = 540;
+            this.splitContainer.SplitterDistance = 547;
             this.splitContainer.TabIndex = 0;
+            // 
+            // flowLayoutPanelLeft
+            // 
+            this.flowLayoutPanelLeft.AutoScroll = true;
+            this.flowLayoutPanelLeft.Controls.Add(this.pictureBox);
+            this.flowLayoutPanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelLeft.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelLeft.Name = "flowLayoutPanelLeft";
+            this.flowLayoutPanelLeft.Size = new System.Drawing.Size(547, 450);
+            this.flowLayoutPanelLeft.TabIndex = 1;
+            this.flowLayoutPanelLeft.SizeChanged += new System.EventHandler(this.flowLayoutPanelLeft_SizeChanged);
             // 
             // pictureBox
             // 
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Location = new System.Drawing.Point(3, 3);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(540, 450);
+            this.pictureBox.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
-            this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
+            this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseClick);
+            this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
+            this.pictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseUp);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.splitContainer);
             this.KeyPreview = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomPlanner";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.AddBox.ResumeLayout(false);
-            this.flowLayoutPanel.ResumeLayout(false);
+            this.flowLayoutPanelRight.ResumeLayout(false);
             this.CreatedBox.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            this.flowLayoutPanelLeft.ResumeLayout(false);
+            this.flowLayoutPanelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,21 +287,23 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newBluToolStripMenuItem;
         private System.Windows.Forms.GroupBox AddBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRight;
+        private System.Windows.Forms.Button buttonCoffee;
+        private System.Windows.Forms.Button buttonTable;
+        private System.Windows.Forms.Button buttonSofa;
+        private System.Windows.Forms.Button buttonBed;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.GroupBox CreatedBox;
         private System.Windows.Forms.ListView listFurniture;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
         private System.Windows.Forms.ColumnHeader positionColumnHeader;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLeft;
+        private System.Windows.Forms.Button buttonWalls;
     }
 }
 
