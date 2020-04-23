@@ -144,25 +144,25 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="newBluToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>151, 26</value>
   </data>
   <data name="newBluToolStripMenuItem.Text" xml:space="preserve">
     <value>新蓝图 F2</value>
   </data>
   <data name="openBluprintToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>151, 26</value>
   </data>
   <data name="openBluprintToolStripMenuItem.Text" xml:space="preserve">
     <value>打开蓝图</value>
   </data>
   <data name="saveBlueprintToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>151, 26</value>
   </data>
   <data name="saveBlueprintToolStripMenuItem.Text" xml:space="preserve">
     <value>保存蓝图</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>151, 26</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>语言</value>
@@ -172,5 +172,26 @@
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>文件</value>
+  </data>
+  <data name="Bed" xml:space="preserve">
+    <value>床</value>
+  </data>
+  <data name="Coffee" xml:space="preserve">
+    <value>咖啡桌</value>
+  </data>
+  <data name="LoadSuccessfully" xml:space="preserve">
+    <value>读取成功</value>
+  </data>
+  <data name="SaveSuccessfully" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="Sofa" xml:space="preserve">
+    <value>沙发</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>桌子</value>
+  </data>
+  <data name="Walls" xml:space="preserve">
+    <value>墙</value>
   </data>
 </root>

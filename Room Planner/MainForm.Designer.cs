@@ -114,6 +114,7 @@
             this.listFurniture.Name = "listFurniture";
             this.listFurniture.UseCompatibleStateImageBehavior = false;
             this.listFurniture.View = System.Windows.Forms.View.Details;
+            this.listFurniture.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listFurniture_MouseClick);
             // 
             // nameColumnHeader
             // 
