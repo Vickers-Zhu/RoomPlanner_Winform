@@ -598,19 +598,18 @@ namespace Room_Planner
             string localFilePath = "";
             OpenFileDialog ofd = new OpenFileDialog();
             JsonSerializer serializer = new JsonSerializer();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
             if (Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
             {
                 SetThreadUILanguage(2052);
-                ofd.Filter = "bpp 文件 (*.bpp)|*.bpp";
             }
             else
             {
                 SetThreadUILanguage(1033);
-                ofd.Filter = "bpp files (*.bpp)|*.bpp";
             }
+            ofd.Filter = resources.GetString("bpp files (*.bpp)|*.bpp", Thread.CurrentThread.CurrentCulture);
             ofd.FilterIndex = 1;
             ofd.RestoreDirectory = true;
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -647,19 +646,18 @@ namespace Room_Planner
             string localFilePath = "";
             SaveFileDialog sfd = new SaveFileDialog();
             JsonSerializer serializer = new JsonSerializer();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
             if (Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
             {
                 SetThreadUILanguage(2052);
-                sfd.Filter = "bpp 文件 (*.bpp)|*.bpp";
             }
             else
             {
                 SetThreadUILanguage(1033);
-                sfd.Filter = "bpp files (*.bpp)|*.bpp";
             }
+            sfd.Filter = resources.GetString("bpp files (*.bpp)|*.bpp", Thread.CurrentThread.CurrentCulture);
             sfd.FilterIndex = 1;
             sfd.RestoreDirectory = true;
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 localFilePath = sfd.FileName.ToString();

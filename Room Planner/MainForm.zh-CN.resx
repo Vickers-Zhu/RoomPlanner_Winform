@@ -194,4 +194,7 @@
   <data name="Walls" xml:space="preserve">
     <value>墙</value>
   </data>
+  <data name="bpp files (*.bpp)|*.bpp" xml:space="preserve">
+    <value>bpp 文件 (*.bpp)|*.bpp</value>
+  </data>
 </root>

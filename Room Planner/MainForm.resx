@@ -627,4 +627,7 @@
   <data name="Walls" xml:space="preserve">
     <value>Walls</value>
   </data>
+  <data name="bpp files (*.bpp)|*.bpp" xml:space="preserve">
+    <value>bpp files (*.bpp)|*.bpp</value>
+  </data>
 </root>
