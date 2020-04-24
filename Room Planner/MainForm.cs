@@ -507,21 +507,19 @@ namespace Room_Planner
 
         public static Bitmap RotateImage(Image image, float angle)
         {
-            if (image == null)
-                throw new ArgumentNullException("image");
-            float dx = image.Width / 2.0f;
-            float dy = image.Height / 2.0f;
-
-            int resolu = (int)Math.Sqrt(image.Width * image.Width + image.Height * image.Height);
-
-            Bitmap rotatedBmp = new Bitmap(resolu, resolu);
-            rotatedBmp.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-            Graphics g = Graphics.FromImage(rotatedBmp);
-            g.TranslateTransform(dx, dy);
-            g.RotateTransform(angle);
-            g.TranslateTransform(-dx, -dy);
-            g.DrawImage(image, new PointF(0, 0));
-            return rotatedBmp;
+            Bitmap bmp = new Bitmap(image);
+            float height = bmp.Height;
+            float width = bmp.Width;
+            int hypotenuse = System.Convert.ToInt32(System.Math.Floor(Math.Sqrt(height * height + width * width)));
+            Bitmap rotatedImage = new Bitmap(hypotenuse, hypotenuse);
+            using (Graphics g = Graphics.FromImage(rotatedImage))
+            {
+                g.TranslateTransform((float)rotatedImage.Width / 2, (float)rotatedImage.Height / 2); 
+                g.RotateTransform(angle);
+                g.TranslateTransform(-(float)rotatedImage.Width / 2, -(float)rotatedImage.Height / 2);
+                g.DrawImage(bmp, (hypotenuse - width) / 2, (hypotenuse - height) / 2, width, height);
+            }
+            return rotatedImage;
         }
 
         private Point RotatePoint(Point baseP, Point point, int Angle)
@@ -600,14 +598,20 @@ namespace Room_Planner
             string localFilePath = "";
             OpenFileDialog ofd = new OpenFileDialog();
             JsonSerializer serializer = new JsonSerializer();
-            ofd.Filter = "bpp files (*.bpp)|*.bpp";
+            if (Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
+            {
+                SetThreadUILanguage(2052);
+                ofd.Filter = "bpp 文件 (*.bpp)|*.bpp";
+            }
+            else
+            {
+                SetThreadUILanguage(1033);
+                ofd.Filter = "bpp files (*.bpp)|*.bpp";
+            }
             ofd.FilterIndex = 1;
             ofd.RestoreDirectory = true;
             ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
-            if(Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
-                SetThreadUILanguage(2052);
-            else
-                SetThreadUILanguage(1033);
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 localFilePath = ofd.FileName.ToString();
@@ -643,14 +647,19 @@ namespace Room_Planner
             string localFilePath = "";
             SaveFileDialog sfd = new SaveFileDialog();
             JsonSerializer serializer = new JsonSerializer();
-            sfd.Filter = "bpp files (*.bpp)|*.bpp";
+            if (Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
+            {
+                SetThreadUILanguage(2052);
+                sfd.Filter = "bpp 文件 (*.bpp)|*.bpp";
+            }
+            else
+            {
+                SetThreadUILanguage(1033);
+                sfd.Filter = "bpp files (*.bpp)|*.bpp";
+            }
             sfd.FilterIndex = 1;
             sfd.RestoreDirectory = true;
             ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
-            if (Thread.CurrentThread.CurrentUICulture.ToString().Trim() == "zh-CN")
-                SetThreadUILanguage(2052);
-            else
-                SetThreadUILanguage(1033);
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 localFilePath = sfd.FileName.ToString();
